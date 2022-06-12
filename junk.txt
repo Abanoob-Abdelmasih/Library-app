@@ -1,0 +1,21 @@
+// BOOK CONSTRUCTOR
+function Books(title, author, pages, read) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
+}
+
+// ADD BOOK TO THE 
+function addBookToLibrary(title, author, pages, read) {
+  const newbook = new Books(title, author, pages, read);
+  console.log(newbook);
+  return newbook;
+}
+
+// myLibrary.push({
+//   title: 'Tom & Jerry',
+//   author: 'Sam',
+//   pages: '450',
+//   read: true,
+// });
