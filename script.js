@@ -1,20 +1,8 @@
 'use strict';
 
-// Books.prototype.info = function () {
-//   if (this.read) return `${this.title} by ${this.author}, ${this.pages}, was read`;
-//   else return `${this.title} by ${this.author}, ${this.pages}, not read yet`;
-// };
+const tbody = document.querySelector('.tbody');
 
-// function Books(title, author, pages, read) {
-//   this.title = title;
-//   this.author = author;
-//   this.pages = pages;
-//   this.read = read;
-// }
-
-// const book1 = new Books('Tom & Jerry', 'sam', '450', false);
-// console.log(book1.info());
-
+//////////////////////////////////////////////////////////////// myLibrary ARRAY ///////////////////////////////////////////////////////
 let myLibrary = [
   {
     author: 'Chinua Achebe',
@@ -25,6 +13,7 @@ let myLibrary = [
     pages: 209,
     title: 'Things Fall Apart',
     year: 1958,
+    read: true,
   },
   {
     author: 'Hans Christian Andersen',
@@ -35,6 +24,7 @@ let myLibrary = [
     pages: 784,
     title: 'Fairy tales',
     year: 1836,
+    read: true,
   },
   {
     author: 'Dante Alighieri',
@@ -45,6 +35,7 @@ let myLibrary = [
     pages: 928,
     title: 'The Divine Comedy',
     year: 1315,
+    read: false,
   },
   {
     author: 'Unknown',
@@ -55,6 +46,7 @@ let myLibrary = [
     pages: 160,
     title: 'The Epic Of Gilgamesh',
     year: -1700,
+    read: true,
   },
   {
     author: 'Unknown',
@@ -65,6 +57,7 @@ let myLibrary = [
     pages: 176,
     title: 'The Book Of Job',
     year: -600,
+    read: false,
   },
   {
     author: 'Unknown',
@@ -75,6 +68,7 @@ let myLibrary = [
     pages: 288,
     title: 'One Thousand and One Nights',
     year: 1200,
+    read: false,
   },
   {
     author: 'Unknown',
@@ -85,8 +79,22 @@ let myLibrary = [
     pages: 384,
     title: "Nj\u00e1l's Saga",
     year: 1350,
+    read: false,
   },
 ];
+
+// prints every book in the array myLibrary
+myLibrary.forEach((book) => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td>${book.author}</td>
+  <td>${book.title}</td>
+  <td>${book.pages}</td>
+  <td>${book.read}</td>`;
+  tbody.appendChild(tr);
+  // console.log(`Author: ${book.author}, Book Title: ${book.title}, Pages: ${book.pages}`);
+});
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////// BOOK CONSTRUCTOR ///////////////////////////////////////////////////////
 
@@ -113,4 +121,5 @@ function addBookToLibrary(title, author, pages, read) {
   console.log(newbook);
   return newbook;
 }
-``
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

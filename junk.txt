@@ -19,3 +19,8 @@ function addBookToLibrary(title, author, pages, read) {
 //   pages: '450',
 //   read: true,
 // });
+
+`<td>${book.author}</td>
+  <td>${book.title}</td>
+  <td>${book.pages}</td>
+  <td>${book.read}</td>`
